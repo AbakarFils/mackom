@@ -1,0 +1,186 @@
+<div class="main-content h-100 d-flex flex-column" ngxAnimatedGradient >
+  <div class="cover-container">
+    <nav id="navbar" class="navbar navbar-expand-lg navbar-light">
+      <div class="container" #stickyMenu
+           [class.sticky] = "sticky">
+        <a class="navbar-brand" href="#">
+          <img src="./assets/brand/logo-white.svg" alt="">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse " id="navbarNavAltMarkup">
+          <!-- ml-auto still works just fine-->
+          <div class="navbar-nav ml-auto text-white">
+            <a class="nav-link active" (click)="scroll($event, about)" aria-current="page" id="home" href="#home">Home</a>
+            <a class="nav-link" id="about" (click)="scroll($event, about)"  href="#about">About us</a>
+            <a class="nav-link" id="project" (click)="scroll($event, project)" href="#project">Projects</a>
+            <a type="button" class="nav-link" data-bs-toggle="modal" data-bs-target="#contactModal">Contact</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <div class="wrapper h-100 content">
+
+    <div class="home" #home>
+      <div class="container">
+        <div class="d-flex justify-content-center p-5 mt-5" >
+          <img src="assets/icons/arrow-up.png" alt="" [class.fix] = "sticky">
+        </div>
+        <div class="row h-100 align-items-center justify-content-center">
+          <div class="col-md-3">
+            <img class="img-fluid" src="assets/img/m-min.png" id="blocM" alt="">
+          </div>
+          <div class="col-md-7">
+            <p class="home-text">Makom</p>
+            <p class="home-text">CONSEIL</p>
+            <p class="home-text">CREATION</p>
+            <p class="home-text">CONTENUS</p>
+            <p class="home-text">TECHNOLOGIE</p>
+          </div>
+          <div class="col-md-2" id="blocK">
+            <img class="img-fluid" src="assets/img/k-min.png" alt="">
+          </div>
+        </div>
+        <div class="d-flex justify-content-center p-5 mt-3">
+          <img src="assets/icons/arrow-down.png" alt="">
+        </div>
+      </div>
+    </div>
+
+    <div class="about hide" #about  >
+      <div class="container">
+        <div class="d-flex justify-content-center p-5">
+          <img src="assets/icons/arrow-up.png" alt="">
+        </div>
+        <div class="row h-100 align-items-center justify-content-center">
+          <div class="col-md-3">
+            <img class="img-fluid" src="assets/img/m-min.png" alt="">
+          </div>
+          <div class="col-md-7">
+            <p class="about-text">Makom est une agence de communication et digitale mixant expérience et créativité.
+
+              A la croisée des cultures africaine et européenne, les talents de notre agence ont pour mission de faire rayonner les marques, entreprises et institutions Africaines sur le continent et à travers le monde.</p>
+          </div>
+          <div class="col-md-2">
+            <img class="img-fluid" src="assets/img/k-min.png" alt="">
+          </div>
+        </div>
+        <div class="d-flex justify-content-center p-5 mt-3">
+          <img src="assets/icons/arrow-down.png" alt="">
+        </div>
+      </div>
+    </div>
+
+    <div id="container" class="project hide" #project>
+      <!-- SLIDER BLANTER -->
+      <div class='sliderbanner container mt-5'>
+        <div class='owl-carousel owl-theme' id='blanter-carousel'>
+          <!-- START -->
+          <div class='blanter-owl-image'>
+            <a href='#link' title='Slider'>
+              <img alt='Slider' src='https://1.bp.blogspot.com/-IV-F5BsUuq8/X8DR6qyoKuI/AAAAAAAAB64/ywoHUOWhyRcF1QpjSERWttnHObVSWu8yACLcBGAsYHQ/s1000/Orbit%2BWorking%2B%25284%2529-min.jpg'/>
+            </a>
+            <h3 class="text-white project-title">Africa Digital Solution</h3>
+            <p class="project-description">Storytelling, identité, 3D, motion, vidéo, website 2022</p>
+          </div>
+          <div class='blanter-owl-image'>
+            <a href='#link' title='Slider'>
+              <img alt='Slider' src='https://1.bp.blogspot.com/-pYCUwGzsYhs/X8DRhYMxsDI/AAAAAAAAB6w/iWjB7rkJRtg0qPm-Mpq4zOWs8QuWAQmXACLcBGAsYHQ/s1000/Orbit%2BWorking%2B%25282%2529-min.jpg'/>
+            </a>
+            <h3 class="text-white project-title">Africa Digital Solution</h3>
+            <p class="project-description">Storytelling, identité, 3D, motion, vidéo, website 2022</p>
+          </div>
+          <div class='blanter-owl-image'>
+            <a href='#link' title='Slider'>
+              <img alt='Slider' src='https://1.bp.blogspot.com/-nfP586jmnks/X8DD2GZuZQI/AAAAAAAAB58/fJKbT6kDozAozUOMbIj9odc0iie3TLRwwCLcBGAsYHQ/s1000/Orbit%2BWorking%2B%25283%2529-min.jpg'/>
+            </a>
+            <h3 class="text-white project-title">Africa Digital Solution</h3>
+            <p class="project-description">Storytelling, identité, 3D, motion, vidéo, website 2022</p>
+          </div>
+          <div class='blanter-owl-image'>
+            <a href='#link' title='Slider'>
+              <img alt='Slider' src='https://1.bp.blogspot.com/-7dbeXPivPQ0/X8DFAx7GtEI/AAAAAAAAB6I/CdUDxHbUIfIKGizW5-wYH2DqCCJ11jtRwCLcBGAsYHQ/s1000/Orbit%2BWorking%2B%25285%2529-min.jpg'/>
+            </a>
+            <h3 class="text-white project-title">Africa Digital Solution</h3>
+            <p class="project-description">Storytelling, identité, 3D, motion, vidéo, website 2022</p>
+          </div>
+          <!-- END -->
+        </div>
+      </div>
+      <!-- END SLIDER BLANTER -->
+    </div>
+
+    <div class="contact container">
+      <!-- Modal contact -->
+      <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title"></h5>
+              <div type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                <img class=" mr-2" src="assets/icons/close.svg" alt="">
+              </div>
+            </div>
+            <div class="modal-body p-5">
+              <div class="container p-5">
+                <img class="mt-2 mb-5 logo-contact" src="assets/brand/makom_logo_colors.svg" alt="">
+                <div class="d-flex justify-content-start  align-items-center mb-3">
+                  <img src="assets/icons/mail.svg" alt="">
+                  <p class="mb-0 mail ml-3">contact@makonagency.com</p>
+                </div>
+                <div class="d-flex justify-content-start  align-items-center">
+                  <img src="assets/icons/pin.svg" alt="">
+                  <p class="mb-0 ml-3 pr-5">Immeuble Rivonia, 11ème Étage, Place Soweto, Plateau, Dakar SÉNÉGAL</p>
+                </div>
+                <img class="mt-3" src="assets/icons/social-media.svg" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Modal contact -->
+    </div>
+
+  </div>
+
+  <footer id="footer" class="mt-auto p-4 bg-white ">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 offset-md-2">
+          <div class="row justify-content-center align-items-center">
+            <div class="col-md-3 mb-4 mb-md-0">
+              <div class="d-flex justify-content-md-end justify-content-center">
+                <a class="" href="#">
+                  <img src="assets/brand/makom_logo_colors.svg" alt="">
+                </a>
+              </div>
+            </div>
+            <div class="col-md-6 mb-4 mb-md-0">
+              <div class="border-l-r">
+                <div class="px-3">
+                  <div class="widget-title align-items-end">
+                    <h3 class="mb-1 footer-mail">contact@makomagency.com</h3>
+                  </div>
+                  <p class="footer-text">Immeuble Rivonia, 11ème Étage,
+                    Place Soweto, Plateau, Dakar SÉNÉGAL</p>
+                  <p class="footer-text">© makom 2022</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 mb-4 mb-md-0">
+              <div class="d-flex justify-content-md-start justify-content-center">
+                <img src="assets/icons/social-media.svg" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </footer>
+</div>
+
+<router-outlet></router-outlet>
