@@ -4,7 +4,7 @@ import ScrollToPlugin from 'gsap/ScrollToPlugin';
 import {DOCUMENT} from "@angular/common";
 //import { DOCUMENT } from '@angular/platform-browser';
 import {WINDOW} from "./services/window.service";
-//import ScrollTrigger from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
 
 import {NgxAnimatedGradientDirective} from 'ngx-animated-gradient';
 
@@ -16,13 +16,13 @@ import {NgxAnimatedGradientDirective} from 'ngx-animated-gradient';
 export class AppComponent implements OnInit, AfterViewInit {
   @ViewChild('stickyMenu') menuElement!: ElementRef;
   menuPosition: any;
-  public sticky: boolean= false;
+  public sticky: boolean = false;
 
   ngAfterViewInit(): void {
     this.directive.colors = [[251, 202, 29], [250, 196, 31], [249, 180, 40],
       [247, 155, 54], [244, 119, 73], [240, 73, 97], [237, 30, 121]];
     this.directive.colorIndices = [2, 1, 3, 5, 4, 6, 7];
-    this.directive.gradientSpeed = 0.02
+    this.directive.gradientSpeed = 0.02;
     this.menuPosition = this.menuElement.nativeElement.offsetTop
 
   }
@@ -41,12 +41,15 @@ export class AppComponent implements OnInit, AfterViewInit {
 
   menu = new TimelineMax({paused: true, reversed: true});
   gradianCloars = [[251, 202, 29], [250, 196, 31], [249, 180, 40],
-    [247, 155, 54], [244, 119, 73], [240, 73, 97], [237, 30, 121]]
+    [247, 155, 54], [244, 119, 73], [240, 73, 97], [237, 30, 121]];
 
   ngOnInit() {
-    this.createMenuAnim()
+    this.animate();
+    //gsap.registerPlugin(ScrollTrigger);
+    //this.createMenuAnim()
     this.directive.colors = [[251, 202, 29], [250, 196, 31], [249, 180, 40],
       [247, 155, 54], [244, 119, 73], [240, 73, 97], [237, 30, 121]]
+
   }
 
   createMenuAnim() {
@@ -89,8 +92,8 @@ export class AppComponent implements OnInit, AfterViewInit {
 
   @HostListener("window:scroll", [])
   onWindowScroll() {
-    const windowScroll = window.pageYOffset;
-    if(windowScroll >= this.menuPosition){
+   /* const windowScroll = window.pageYOffset;
+    if (windowScroll >= this.menuPosition) {
       this.sticky = true;
     } else {
       this.sticky = false;
@@ -99,6 +102,32 @@ export class AppComponent implements OnInit, AfterViewInit {
     console.log(offset);
     offset > 100 ? this.videosM.play() : this.videosM.reverse();
     offset > 100 ? this.videosK.play() : this.videosK.reverse();
+*/
+  }
 
+  animate() {
+    gsap.registerPlugin(ScrollTrigger);
+
+    gsap.to(".b1", {
+      x: -300,
+      duration: 2, scrollTrigger: {
+        trigger: '.b1',
+        start: '0',
+        endTrigger: '.endb',
+        scrub: true,
+        toggleActions: 'play pause reverse none',
+        markers: true
+      },
+    });
+    gsap.to(".b2", {
+      x: 300, duration: 2, scrollTrigger: {
+        trigger: '.b2',
+        start: '0',
+        endTrigger: '.endb',
+        scrub: true,
+        toggleActions: 'play pause reverse none',
+        markers: true
+      },
+    });
   }
 }
